@@ -1,0 +1,628 @@
+/* =========================================================
+   SITE: 12 DE OUTUBRO — NOSSA SENHORA APARECIDA E DIA DAS CRIANÇAS
+   Arquivo: style.css
+   ========================================================= */
+
+:root {
+    --azul-escuro: #12345a;
+    --azul: #1f5f99;
+    --azul-claro: #eaf3fb;
+    --dourado: #d7a83e;
+    --dourado-claro: #fff6df;
+    --texto: #303846;
+    --texto-suave: #687386;
+    --fundo: #ffffff;
+    --fundo-suave: #f6f8fb;
+    --borda: #e4e9f0;
+    --sombra: 0 12px 35px rgba(24, 49, 79, 0.09);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    margin: 0;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Menu de navegação */
+.navbar {
+    background: var(--azul-escuro);
+    box-shadow: 0 4px 18px rgba(10, 30, 55, 0.16);
+    padding: 0.85rem 0;
+}
+
+.navbar .navbar-brand {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+}
+
+.navbar .navbar-brand:hover,
+.navbar .nav-link:hover {
+    color: #ffe5a0;
+}
+
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.88);
+    font-weight: 600;
+    padding: 0.55rem 0.8rem;
+}
+
+.navbar .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.45);
+}
+
+.navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(215, 168, 62, 0.35);
+}
+
+/* Carrossel principal */
+.hero {
+    width: 100%;
+    max-width: 1320px;
+    margin: 24px auto 0;
+    padding: 0 15px;
+}
+
+#carouselStacked .carousel-inner {
+    overflow: hidden;
+    border-radius: 24px;
+    background: #172231;
+    box-shadow: var(--sombra);
+}
+
+#carouselStacked .carousel-item {
+    height: 540px;
+    position: relative;
+    background: #172231;
+}
+
+#carouselStacked .carousel-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#carouselStacked .carousel-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(8, 20, 35, 0.86) 0%,
+        rgba(8, 20, 35, 0.38) 42%,
+        rgba(8, 20, 35, 0.03) 100%
+    );
+    pointer-events: none;
+}
+
+#carouselStacked .carousel-caption {
+    z-index: 2;
+    right: 10%;
+    bottom: 52px;
+    left: 10%;
+    padding: 1.25rem;
+}
+
+#carouselStacked .carousel-caption h1,
+#carouselStacked .carousel-caption h2 {
+    margin-bottom: 0.75rem;
+    color: #fff;
+    font-size: clamp(1.8rem, 4vw, 3.25rem);
+    font-weight: 800;
+    line-height: 1.15;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+}
+
+#carouselStacked .carousel-caption p {
+    margin-bottom: 1.25rem;
+    color: #fff;
+    font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.55);
+}
+
+#carouselStacked .carousel-caption .btn {
+    border: 0;
+    border-radius: 999px;
+    background: var(--dourado);
+    color: #1e2b3a;
+    font-weight: 750;
+    padding: 0.75rem 1.35rem;
+}
+
+#carouselStacked .carousel-caption .btn:hover {
+    background: #f0c75e;
+    color: #172231;
+    transform: translateY(-2px);
+}
+
+#carouselStacked .carousel-indicators {
+    z-index: 3;
+}
+
+#carouselStacked .carousel-indicators [data-bs-target] {
+    width: 11px;
+    height: 11px;
+    margin: 0 5px;
+    border: 0;
+    border-radius: 50%;
+}
+
+#carouselStacked .carousel-control-prev,
+#carouselStacked .carousel-control-next {
+    z-index: 3;
+    width: 8%;
+}
+
+#carouselStacked .carousel-control-prev-icon,
+#carouselStacked .carousel-control-next-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.6rem;
+    border-radius: 50%;
+    background-color: rgba(10, 25, 43, 0.48);
+    background-size: 55%;
+}
+
+/* Seções gerais */
+.section-pad {
+    padding: 88px 0;
+}
+
+.section-title {
+    color: var(--azul-escuro);
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.eyebrow {
+    margin-bottom: 0.65rem;
+    color: var(--azul);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.text-muted,
+.text-secondary {
+    color: var(--texto-suave) !important;
+}
+
+.soft-bg {
+    background: var(--fundo-suave);
+}
+
+.kids-bg {
+    background: linear-gradient(135deg, #fff8e8 0%, #fffdf8 55%, #eef6ff 100%);
+}
+
+/* Cartões de conteúdo */
+.feature-card {
+    height: 100%;
+    padding: 30px;
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 8px 26px rgba(24, 49, 79, 0.055);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra);
+}
+
+.feature-card h3 {
+    color: var(--azul-escuro);
+    font-weight: 750;
+}
+
+.feature-card ul {
+    padding-left: 1.25rem;
+}
+
+.feature-card li {
+    margin-bottom: 0.55rem;
+}
+
+.feature-card li:last-child {
+    margin-bottom: 0;
+}
+
+.icon-circle {
+    display: flex;
+    width: 58px;
+    height: 58px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    border-radius: 50%;
+    background: var(--azul-claro);
+    color: var(--azul);
+    font-size: 1.45rem;
+}
+
+.fact-number {
+    margin-bottom: 0.65rem;
+    color: var(--dourado);
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1;
+}
+
+/* Aviso da seção histórica */
+.alert {
+    border-radius: 14px;
+    line-height: 1.6;
+}
+
+/* Oração */
+.prayer {
+    position: relative;
+    padding: 36px 40px;
+    border: 1px solid #f0dfb6;
+    border-left: 5px solid var(--dourado);
+    border-radius: 18px;
+    background: linear-gradient(135deg, #fffaf0, #fff);
+    box-shadow: 0 10px 30px rgba(104, 78, 25, 0.07);
+    font-size: 1.08rem;
+}
+
+.prayer p:last-child {
+    color: var(--azul-escuro);
+}
+
+/* Mensagem final */
+.quote {
+    padding: 48px;
+    border: 1px solid var(--borda);
+    border-radius: 24px;
+    background: linear-gradient(135deg, #f5f9ff, #fff9eb);
+    box-shadow: var(--sombra);
+}
+
+.quote h2,
+.quote h3 {
+    color: var(--azul-escuro);
+    font-weight: 800;
+}
+
+.quote p {
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Rodapé */
+footer {
+    margin-top: 20px;
+    background: var(--azul-escuro);
+    color: rgba(255, 255, 255, 0.88);
+}
+
+footer p:first-child {
+    color: #fff;
+}
+
+footer p {
+    font-size: 0.95rem;
+}
+
+/* Scrollspy: link ativo na navbar */
+.navbar .nav-link {
+    border-bottom: 2px solid transparent;
+}
+
+.navbar .nav-link.active {
+    color: var(--dourado);
+    border-bottom-color: var(--dourado);
+}
+
+/* Tabs: Como celebrar */
+.celebrar-tabs {
+    gap: 6px;
+    border-bottom: 2px solid var(--borda);
+}
+
+.celebrar-tabs .nav-link {
+    padding: 0.8rem 1.4rem;
+    border: 0;
+    border-radius: 14px 14px 0 0;
+    color: var(--azul-escuro);
+    font-weight: 700;
+}
+
+.celebrar-tabs .nav-link:hover {
+    background: var(--dourado-claro);
+}
+
+.celebrar-tabs .nav-link.active {
+    background: var(--azul-escuro);
+    color: #fff;
+}
+
+.celebrar-pane {
+    border-top-left-radius: 0;
+}
+
+.celebrar-pane:hover {
+    transform: none;
+}
+
+/* Toast */
+.toast-fe {
+    border: 1px solid var(--dourado);
+    border-radius: 14px;
+    background: var(--azul-escuro);
+    color: #fff;
+    box-shadow: var(--sombra);
+}
+
+.toast-fe .toast-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    background: transparent;
+    color: var(--dourado);
+}
+
+@media (max-width: 575.98px) {
+    .celebrar-tabs .nav-link {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.92rem;
+    }
+}
+
+/* Acessibilidade: foco visível ao navegar pelo teclado */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--dourado);
+    outline-offset: 3px;
+}
+
+/* Ajustes para tablets e celulares */
+@media (max-width: 991.98px) {
+    .navbar .nav-link {
+        padding: 0.65rem 0;
+    }
+
+    .section-pad {
+        padding: 68px 0;
+    }
+
+    #carouselStacked .carousel-item {
+        height: 460px;
+    }
+
+    .feature-card {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero {
+        margin-top: 12px;
+        padding: 0 10px;
+    }
+
+    #carouselStacked .carousel-inner {
+        border-radius: 16px;
+    }
+
+    #carouselStacked .carousel-item {
+        height: 390px;
+    }
+
+    #carouselStacked .carousel-caption {
+        right: 7%;
+        bottom: 35px;
+        left: 7%;
+        padding: 0.5rem;
+    }
+
+    #carouselStacked .carousel-caption h1,
+    #carouselStacked .carousel-caption h2 {
+        font-size: 1.65rem;
+    }
+
+    #carouselStacked .carousel-caption p {
+        font-size: 0.92rem;
+        line-height: 1.45;
+    }
+
+    #carouselStacked .carousel-caption .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    #carouselStacked .carousel-control-prev,
+    #carouselStacked .carousel-control-next {
+        width: 12%;
+    }
+
+    #carouselStacked .carousel-control-prev-icon,
+    #carouselStacked .carousel-control-next-icon {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+
+    .section-pad {
+        padding: 52px 0;
+    }
+
+    .feature-card {
+        padding: 22px;
+        border-radius: 16px;
+    }
+
+    .prayer {
+        padding: 25px 22px;
+        font-size: 1rem;
+    }
+
+    .quote {
+        padding: 30px 22px;
+        border-radius: 18px;
+    }
+}
+
+/* Respeita a preferência do visitante por menos animações */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+
+/* =========================================================
+   MELHORIAS VISUAIS
+   ========================================================= */
+
+:root {
+    --fonte-titulo: "Playfair Display", Georgia, serif;
+    --fonte-corpo: "Nunito", "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body { font-family: var(--fonte-corpo); }
+
+h1, h2, h3, .section-title, .navbar-brand, .fact-number, .quote h2, .quote h3 {
+    font-family: var(--fonte-titulo);
+}
+
+/* Menu */
+.navbar {
+    background: rgba(18, 52, 90, 0.95);
+    backdrop-filter: blur(10px);
+}
+.navbar .navbar-brand::before { content: "\2726"; color: var(--dourado); margin-right: 8px; }
+
+/* Carrossel */
+#carouselStacked .carousel-caption h1,
+#carouselStacked .carousel-caption h2 { letter-spacing: -0.01em; }
+#carouselStacked .carousel-caption p { max-width: 620px; margin-left: auto; margin-right: auto; }
+#carouselStacked .carousel-caption .btn,
+.btn { border-radius: 999px; }
+
+/* Títulos de seção */
+.eyebrow::before,
+.text-center .eyebrow::after {
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    margin-right: 10px;
+    vertical-align: middle;
+    background: var(--dourado);
+}
+.text-center .eyebrow::after { margin-right: 0; margin-left: 10px; }
+
+/* Seção das crianças: manchas coloridas ao fundo */
+.kids-bg { position: relative; overflow: hidden; }
+.kids-bg::before, .kids-bg::after { content: ""; position: absolute; border-radius: 50%; z-index: 0; pointer-events: none; }
+.kids-bg::before { width: 300px; height: 300px; top: -90px; right: -80px; background: radial-gradient(circle, rgba(255, 214, 110, 0.55), transparent 70%); }
+.kids-bg::after { width: 360px; height: 360px; bottom: -130px; left: -120px; background: radial-gradient(circle, rgba(150, 200, 255, 0.5), transparent 70%); }
+.kids-bg > .container { position: relative; z-index: 1; }
+
+/* Cartões */
+.feature-card { position: relative; overflow: hidden; }
+.feature-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--dourado), var(--azul));
+    opacity: 0.85;
+}
+.icon-circle {
+    background: linear-gradient(135deg, #eaf3fb, #d6e8f8);
+    box-shadow: 0 6px 14px rgba(31, 95, 153, 0.15);
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+.feature-card:hover .icon-circle {
+    transform: rotate(-6deg) scale(1.08);
+    background: var(--dourado-claro);
+    color: #b8861b;
+}
+
+/* Números da história */
+.fact-number {
+    display: inline-block;
+    background: linear-gradient(120deg, #e3b24a, #b8861b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Oração */
+.prayer { overflow: hidden; }
+.prayer::before {
+    content: "\201C";
+    position: absolute;
+    top: -4px; left: 20px;
+    font-family: var(--fonte-titulo);
+    font-size: 6rem;
+    line-height: 1;
+    color: var(--dourado);
+    opacity: 0.3;
+}
+.prayer p { position: relative; font-family: var(--fonte-titulo); font-style: italic; line-height: 1.85; }
+#btnCopiar { padding: 0.75rem 1.6rem; box-shadow: 0 8px 20px rgba(215, 168, 62, 0.3); }
+#btnCopiar:hover { transform: translateY(-2px); }
+
+/* Mensagem final */
+.quote { position: relative; overflow: hidden; }
+.quote::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--azul), var(--dourado), var(--azul));
+}
+
+/* Rodapé */
+footer.site-footer {
+    margin-top: 20px;
+    background: linear-gradient(160deg, #12345a, #0c2440);
+    border-top: 4px solid var(--dourado);
+}
+.footer-title { font-family: var(--fonte-titulo); font-size: 1.25rem; font-weight: 700; color: #fff; }
+.footer-credit { font-size: 0.85rem; color: rgba(255, 255, 255, 0.7); }
+.footer-credit a { color: var(--dourado); text-decoration: none; }
+.footer-credit a:hover { text-decoration: underline; }
+
+/* Animação ao rolar a página (ativada pelo script.js) */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
